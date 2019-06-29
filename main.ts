@@ -518,7 +518,7 @@ namespace robotbit {
             ret = distanceBuf;
         }
         distanceBuf = d;
-        Math.floor(ret * 9 / 6 / 58);
+        return Math.floor(ret * 9 / 6 / 58);
     }
 	
 }
