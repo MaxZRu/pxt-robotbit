@@ -499,7 +499,7 @@ namespace robotbit {
     }
 
 	
-    //% blockId=robotbit_ultrasonicver block="Ultrasonic|pin start %pin|pin echo %pin2"
+    //% blockId=robotbit_ultrasonic2pin block="Ultrasonic|pin start %pin|pin echo %pin2"
     //% weight=14
     export function Ultrasonic2Pin(pin: DigitalPin, pin2: DigitalPin): number {
 
