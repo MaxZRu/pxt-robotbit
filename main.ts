@@ -462,7 +462,7 @@ namespace robotbit {
         matrixShow();
     }
 
-    //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
+    //% blockId=robotbit_ultrasonic block="Ultrasonic1|pin %pin"
     //% weight=10
     export function Ultrasonic(pin: DigitalPin): number {
         return UltrasonicVer(pin, SonarVersion.V1);
