@@ -498,4 +498,27 @@ namespace robotbit {
         // Correction
     }
 
+	
+    //% blockId=robotbit_ultrasonicver block="Ultrasonic|pin start %pin|pin echo %pin2"
+    //% weight=14
+    export function Ultrasonic2Pin(pin: DigitalPin, pin2: DigitalPin): number {
+
+        pins.setPull(pin, PinPullMode.PullNone); //or PullDown
+        pins.digitalWritePin(pin, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(pin, 1);
+        control.waitMicros(10);
+        pins.digitalWritePin(pin, 0);
+
+        // read pulse
+        let d = pins.pulseIn(pin2, PulseValue.High, 25000);
+        let ret = d;
+        // filter timeout spikes
+        if (ret == 0 && distanceBuf != 0) {
+            ret = distanceBuf;
+        }
+        distanceBuf = d;
+        Math.floor(ret * 9 / 6 / 58);
+    }
+	
 }
